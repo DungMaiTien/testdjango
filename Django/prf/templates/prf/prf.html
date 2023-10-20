@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Đặc điểm và liên kết CSS -->
+</head>
+<body>
+    <!-- Phần giỏ hàng -->
+    <div id="cart" style="display: none;">
+        <h3>Giỏ hàng của bạn</h3>
+        <ul id="cart-items"></ul>
+    </div>
+
+    <!-- Sản phẩm -->
+    <div class="col-md-3">
+        <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+            <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pr3.jpg" alt="Hình ảnh 1">
+            <div class="card-body">
+                <p class="card-title text-center">Áo phông họa tiết, chất liệu cotton 100%, 230gsm</p>
+                <h5 class="card-text text-center">
+                    <small>189.000đ </small><del><span class="text-muted">259.000</span></del>
+                </h5>
+                <button class="hidden-button btn btn-primary custom-button" onclick="addToCart(this)">Mua Ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        function addToCart(button) {
+            const productCard = button.closest(".card");
+            const productName = productCard.querySelector(".card-title").textContent;
+            const productPrice = productCard.querySelector(".card-text small").textContent;
+
+            const cartItems = document.getElementById("cart-items");
+            const cartItem = document.createElement("li");
+            cartItem.textContent = `${productName} - ${productPrice}`;
+            cartItems.appendChild(cartItem);
+
+            // Hiển thị giỏ hàng
+            const cart = document.getElementById("cart");
+            cart.style.display = "block";
+        }
+    </script>
+</body>
+</html>

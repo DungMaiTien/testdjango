@@ -1,0 +1,43 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+<div class="container mt-4">
+    <h2 class="mb-4 text-center">Bảng Kích Thước Áo</h2>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Chiều Cao (cm)</th>
+          <th>Cân Nặng (kg)</th>
+          <th>Kích Thước Áo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>155-160</td>
+          <td>45-50</td>
+          <td>S</td>
+        </tr>
+        <tr>
+          <td>161-165</td>
+          <td>50-55</td>
+          <td>M</td>
+        </tr>
+        <tr>
+          <td>166-170</td>
+          <td>55-60</td>
+          <td>L</td>
+        </tr>
+        <tr>
+          <td>171-175</td>
+          <td>60-65</td>
+          <td>XL</td>
+        </tr>
+        <tr>
+          <td>176-180</td>
+          <td>65-70</td>
+          <td>XXL</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+{% endblock content %}

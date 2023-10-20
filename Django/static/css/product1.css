@@ -1,0 +1,30 @@
+.product-card {
+    transition: transform 0.2s;
+    overflow: hidden;
+  }
+  
+  .product-card:hover {
+    transform: scale(1.1);
+  }
+
+  .product-card .btn {
+    width: 100%;
+    margin: 5px; /* Điều chỉnh khoảng cách giữa các nút */
+    background-color: #888888;
+    color: #ffffff;
+    display: none;
+  }
+  .product-card .btn:hover {
+    background-color: #13a3eb; /* Đổi màu nền sang đỏ khi hover */
+}
+.product-card:hover .btn {
+    display: block;
+    opacity: 1;
+  }
+  #view-more-container {
+    display: flex;
+    justify-content: center;
+}
+card-body form {
+  display: none;
+}

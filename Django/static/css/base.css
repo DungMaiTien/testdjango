@@ -1,0 +1,31 @@
+.navbar-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-item {
+    flex: 1;
+    text-align: center;
+  }
+  /* Màu chữ mặc định */
+.navbar-nav .nav-link {
+    color: #0a0a0a; /* Màu chữ mặc định, ở đây là trắng */
+  }
+  
+  /* Màu chữ khi di chuột đến */
+  .navbar-nav .nav-link:hover {
+    color: #ff0000; /* Màu đỏ, bạn có thể thay đổi mã màu tùy ý */
+  }
+  /* Tăng kích thước phông chữ cho một phần tử cụ thể */
+
+  /* Tăng kích thước phông chữ cho tất cả các phần tử trong một lớp cụ thể */
+  .navbar-nav .nav-link {
+    font-size: 18px; /* Thay đổi kích thước phông chữ của liên kết trong navbar thành 18px */
+    font-weight: 500; /* Để tăng mức độ đậm của chữ trong navbar */
+  }
+.search-form {
+    margin-top: 10px; /* Điều chỉnh giá trị của margin-top theo nhu cầu của bạn */
+    margin-bottom: 10px;
+    margin-right: 10px;
+}
+  

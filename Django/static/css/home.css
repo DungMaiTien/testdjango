@@ -1,0 +1,36 @@
+.product-image {
+    width: 100%;
+    height: 300px; /* Thay đổi giá trị tùy ý */
+    object-fit: cover; /* Để đảm bảo hình ảnh không bị bóp méo */
+}
+.custom-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #2998ac;
+}
+.hidden-button {
+    display: none;
+}
+
+.card {
+    transition: transform 0.5s;
+}
+.card:hover {
+    transform: scale(1.1);
+}
+.carousel-control-next, .carousel-control-prev {
+    filter: alpha(opacity=0);
+    opacity: 0;
+}
+/* Hiển thị nút trước và sau khi rê chuột vào */
+.carousel:hover .carousel-control-next, .carousel:hover .carousel-control-prev {
+    filter: alpha(opacity=100);
+    opacity: 1;
+}
+.footer {
+    margin-top: 50px; /* Thay đổi giá trị này để điều chỉnh khoảng cách theo ý muốn của bạn */
+    margin-bottom: 80px;
+}
+

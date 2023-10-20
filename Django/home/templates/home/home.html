@@ -1,0 +1,261 @@
+{% extends "home/base.html" %}
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sản phẩm quần áo</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    
+    <!-- Bao gồm thư viện Bootstrap -->
+    {% comment %} <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> {% endcomment %}
+</head>
+
+<body>
+    
+    <header class="header">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{ MEDIA_URL }}images/sl11.webp" alt="First slide">
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{ MEDIA_URL }}images/sl2.webp" alt="Second slide">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only"></span>
+            </a>
+        </div>
+        
+    </header>
+    <div class="container">
+        <h1 class="mt-4 text-center">Best Seller <i class="bi bi-fire"></i></h1>
+        <h2 class="mt-4">Áo thun</h2>
+        <div class="row">
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pr3.jpg" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo phông họa tiết, chất liệu cotton 100% , 230gsm</p>
+                        <h5 class="card-text text-center">
+                            <small class="product-price" >189.000đ </small>
+                            <del><span class="text-muted"> 259.000</span></del>
+                          </h5>
+                          <button class="hidden-button btn btn-primary custom-button" onclick="addToCart('{{ product.title }}', {{ product.price }})">Mua Ngay</button>
+
+                    </div>
+                </div>
+            </div>
+           <!-- Sản phẩm  -->
+           <div class="col-md-3">
+            <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pr4.jpg" alt="Hình ảnh 1">
+                <div class="card-body">
+                    <p class="card-title text-center">Áo phông họa tiết, chất liệu cotton 100% , 230gsm</p>
+                    <h5 class="card-text text-center">
+                        <small>189.000đ </small><del><span class="text-muted"> 259.000</span></del>
+                      </h5>
+                      <button class="hidden-button btn btn-primary custom-button" onclick="addToCart('product1', 'Áo phông họa tiết, chất liệu cotton 100% , 230gsm', 189000)">Mua Ngay</button>
+                      
+                </div>
+            </div>
+        </div>
+        <!-- Sản phẩm  -->
+        <div class="col-md-3">
+            <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pr5.jpg" alt="Hình ảnh 1">
+                <div class="card-body">
+                    <p class="card-title text-center">Áo phông họa tiết, chất liệu cotton 100% , 230gsm</p>
+                    <h5 class="card-text text-center">
+                        <small>189.000đ </small><del><span class="text-muted"> 259.000</span></del>
+                      </h5>
+                    <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+        <!-- Sản phẩm  -->
+        <div class="col-md-3">
+            <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pr6.jpg" alt="Hình ảnh 1">
+                <div class="card-body">
+                    <p class="card-title text-center">Áo phông họa tiết, chất liệu cotton 100% , 230gsm</p>
+                    <h5 class="card-text text-center">
+                        <small>189.000đ </small><del><span class="text-muted"> 259.000</span></del>
+                      </h5>
+                    <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                </div>
+            </div>
+        </div>
+        <h2 class="mt-4">Áo Polo</h2>
+        <div class="row">
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pl1.jpeg" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Polo Năng động trẻ trung cho nam, chất liệu cotton 100% , 260gsm</p>
+                        <h5 class="card-text text-center"> 219.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>  
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pl2.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Polo TeeLab, chất liệu cotton 100% , 260gsm</p>
+                        <h5 class="card-text text-center"> 219.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>  
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pl3.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Polo DIOR, chất liệu cotton 100% , 260gsm</p>
+                        <h5 class="card-text text-center"> 219.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>  
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                    <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/pl4.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Polo ID, chất liệu cotton 100% , 260gsm</p>
+                        <h5 class="card-text text-center"> 219.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>  
+        <h2 class="mt-4">Áo Jacket</h2>
+        <div class="row">
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/jk1.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Jacket Unisex, chất liệu Dù chống ướt</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>     
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/jk2.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Jacket Unisex, chất liệu Dù chống ướt</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>    
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/jk3.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Jacket Unisex, chất liệu Dù chống ướt</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>     <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/jk4.jpg" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Jacket Unisex, chất liệu Dù chống ướt</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>      
+        </div>
+        <h2 class="mt-4">Áo Hoodie</h2>
+        <div class="row">
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/hd1.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Hoodie Unisex, chất liệu  chân bồng</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>    
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/hd2.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Hoodie Unisex, chất liệu  chân bồng</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>    
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/hd3.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Hoodie Unisex, chất liệu  chân bồng</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>  
+            <!-- Sản phẩm  -->
+            <div class="col-md-3">
+                <div class="card mb-4" onmouseover="showButton(this)" onmouseout="hideButton(this)">
+                     <img class="card-img-top product-image" src="{{ MEDIA_URL }}images/hd4.webp" alt="Hình ảnh 1">
+                    <div class="card-body">
+                        <p class="card-title text-center">Áo Hoodie Unisex, chất liệu  chân bồng</p>
+                        <h5 class="card-text text-center"> 289.000 vnđ</h5>
+                        <button class="hidden-button btn btn-primary custom-button">Mua Ngay</button>
+                    </div>
+                </div>
+            </div>
+            <h5 class="card-text text-center"><a href="{% url 'abm:news_post' 3 %}">Xem thêm<a/></h5>    
+    
+                       
+    </div>
+
+    <!-- Bao gồm tệp JavaScript của Bootstrap (tùy chọn) -->
+    
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    {% comment %} <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script> {% endcomment %}
+</body>
+
+
+
+</html>
+
+
+{% endblock content%}

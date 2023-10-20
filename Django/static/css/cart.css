@@ -1,0 +1,6 @@
+.cart-container {
+    margin: 0 auto; /* Căn giữa theo chiều ngang */
+    max-width: 800px; /* Giới hạn chiều rộng của giỏ hàng */
+    padding: 20px; /* Tạo khoảng trắng ở cả hai bên */
+  }
+  

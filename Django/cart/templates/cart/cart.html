@@ -1,0 +1,49 @@
+{% extends "home/nft.html" %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/cart.css' %}">
+
+  <h1 class="mt-4 text-center">Giỏ hàng của tôi</h1>
+    <div class="container cart-container">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Sản phẩm</th>
+                <th scope="col">Số lượng</th>
+                <th scope="col">Giá</th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for cart_item in cart_items %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ cart_item.product.title }}</td>
+                        <td>{{ cart_item.quantity }}</td>
+                        <td>{{ cart_item.product.price }}</td>
+                        <td>
+                            <!-- Thêm nút xóa -->
+                            <form action="#" method="post">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3" class="text-right"><strong>Tổng giá tiền:</strong></td>
+                    <td>{{ total_price }}</td>
+                    <td>
+                        <!-- Thêm nút Đặt hàng -->
+                        <form action="#" method="post">
+                            {% csrf_token %}
+                            <button type="submit" class="btn btn-danger btn-sm">Xác nhận Đặt hàng</button>
+                        </form>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+{% endblock content %}

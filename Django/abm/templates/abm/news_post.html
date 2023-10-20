@@ -1,0 +1,11 @@
+{% extends "home/base.html" %}
+
+{% block content %}
+<h1>{{title}}</h1>
+<hr/>
+<p>{{summary}}</p>
+<hr/>
+<p>{{content}}</p>
+<a href= "{% url 'news:news' %}">Quay lại</a>
+{% endblock content %}
+

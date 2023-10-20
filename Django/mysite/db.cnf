@@ -1,0 +1,5 @@
+[client]
+database=mysite
+user=root
+password=2012
+default-character-set=utf8
